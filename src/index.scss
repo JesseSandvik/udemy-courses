@@ -33,12 +33,10 @@
 body {
   background: $primary-color;
   background:
-  linear-gradient(
-    to right,
-    rgba($primary-color, 0.9),
+  linear-gradient(to right,
+    rgba($primary-color, 0.6),
     rgba($primary-color, 0.3)
-  ),
-  url(./self-desert-edit.jpg);
+  ), url(./self-desert-edit.jpg);
   background-size: cover;
   color: set-text-color($primary-color);
   font-family: Marvel, Georgia, 'Times New Roman', Times, serif;

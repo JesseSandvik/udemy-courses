@@ -267,7 +267,6 @@ nav {
   padding-right: .5rem;
   height: 100%;
   padding-top: 60vh;
-  padding-bottom: 10vh;
   overflow: hidden;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -798,8 +797,8 @@ nav {
 
 body {
   background: #0a0908;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(10, 9, 8, 0.9)), to(rgba(10, 9, 8, 0.3))), url(./self-desert-edit.jpg);
-  background: linear-gradient(to right, rgba(10, 9, 8, 0.9), rgba(10, 9, 8, 0.3)), url(./self-desert-edit.jpg);
+  background: -webkit-gradient(linear, left top, right top, from(rgba(10, 9, 8, 0.6)), to(rgba(10, 9, 8, 0.3))), url(./self-desert-edit.jpg);
+  background: linear-gradient(to right, rgba(10, 9, 8, 0.6), rgba(10, 9, 8, 0.3)), url(./self-desert-edit.jpg);
   background-size: cover;
   color: #f2f4f3;
   font-family: Marvel, Georgia, 'Times New Roman', Times, serif;

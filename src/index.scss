@@ -1,0 +1,86 @@
+@import './config';
+@import './header/Header';
+@import './home/Home';
+@import './about/About';
+@import './contact/Contact';
+@import './footer/Footer';
+@import './header/menu';
+
+@function weight($weight-name) {
+  @return map-get($font-weights, $weight-name);
+}
+
+@mixin flexCenter($direction) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: $direction;
+}
+
+@mixin theme($light-theme: true) {
+  @if $light-theme {
+    background: lighten($primary-color, 100%);
+    color: darken($primary-color, 100%);
+  }
+}
+
+@mixin mobile {
+  @media (max-width: $mobile) {
+    @content;
+  }
+}
+
+body {
+  background: $primary-color;
+  background:
+  linear-gradient(
+    to right,
+    rgba($primary-color, 0.9),
+    rgba($primary-color, 0.3)
+  ),
+  url(./self-desert-edit.jpg);
+  background-size: cover;
+  color: set-text-color($primary-color);
+  font-family: Marvel, Georgia, 'Times New Roman', Times, serif;
+  font-weight: weight(regular);
+  height: 100vh;
+  line-height: 1;
+}
+
+.main {
+  height: 100%;
+  width: 100%;
+  @include flexCenter(column);
+
+  #{&}_paragraph1 {
+    font-weight: weight(regular);
+
+    &:hover {
+      color: pink;
+    }
+  }
+  #{&}_paragraph2 {
+    @extend .main_paragraph1;
+
+    &:hover {
+      color: $accent-color;
+    }
+  }
+}
+
+@include mobile {
+  flex-direction: column;
+}
+
+.light {
+  @include theme($light-theme: true);
+}
+
+h1, h2, h3 {
+  font-weight: 400;
+}
+
+main {
+  height: 100%;
+  width: 100%;
+}

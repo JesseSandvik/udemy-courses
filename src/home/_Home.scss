@@ -1,0 +1,62 @@
+@import '../config';
+
+.home {
+    padding-left: .5rem;
+    padding-right: .5rem;
+    height: 100%;
+    padding-top: 60vh;
+    padding-bottom: 10vh;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+    &_clock {
+        @include secondary-base;
+
+        &:hover {
+            @include hover-color-animation;
+        }
+    }
+
+    .self {
+        width: 50%;
+    }
+
+    &_name {
+        font-family: Marvel, 'Times New Roman', Times, serif;
+        font-size: 5rem;
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 2px solid set-text-color($primary-color);
+
+        &--last {
+            font-family: Marvel, Verdana, Geneva, Tahoma, sans-serif;
+            color: $accent-color;
+            letter-spacing: .2rem;
+
+            &:hover {
+                @include hover-color-animation;
+            }
+        }
+    }
+    &_job-title {
+        font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
+        letter-spacing: .5rem;
+        padding-top: 1rem;
+    }
+    .social-icons {
+        bottom: 1rem;
+        left: 1rem;
+        position: fixed;
+      }
+      
+      .link_style {
+        color: set-text-color($primary-color);
+        padding: 0.4rem;
+        @include transition-ease;
+      
+        &:hover {
+            @include hover-color-animation;
+          font-size: 30px;
+        }
+      }
+}

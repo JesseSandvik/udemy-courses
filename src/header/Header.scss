@@ -1,0 +1,21 @@
+@import '../config';
+@import './menu';
+
+header {
+  position:fixed;
+  z-index: 2;
+  width: 100%;
+  padding: 1rem;
+}
+
+nav {
+  text-align: center;
+}
+
+.menu-nav {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+    
+
+}

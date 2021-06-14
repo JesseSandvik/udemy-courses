@@ -1,0 +1,86 @@
+@import '../config';
+
+.about {
+    height: 100%;
+    padding-top: 8vh;
+    padding-left: .5rem;
+    padding-right: .5rem;
+    overflow: hidden;
+    align-items: center;
+    text-align: center;
+
+    &_title {
+        @include secondary-base;
+        padding-bottom: 5vh;
+        border-bottom: 2px solid set-text-color($primary-color);
+
+        &:hover {
+            @include hover-color-animation;
+        }
+    }
+
+    &_links {
+        font-size: 34px;
+        padding-bottom: 1rem;
+
+        &-link {
+            color: set-text-color($primary-color);
+            font-weight: 500;
+            padding: 1rem;
+            text-decoration: none;
+            @include transition-ease;
+
+            &:hover {
+                @include hover-color-animation;
+            }
+        }
+    }
+
+    &_body {
+        padding-top: 5vh;
+        padding-bottom: 10vh;
+        background-color: $primary-color;
+    }
+
+    &_body-item {
+        padding-bottom: 1.5rem;
+        padding-top: 1.5rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        letter-spacing: .2rem;
+        font-size:x-large;
+    }
+    &_body_list {
+        list-style: none;
+        padding-top: 2.5vh;
+
+        &-item {
+            padding-left: 5vh;
+            padding-top: 2.5vh;
+            padding-right: 5vh;
+            font-size: x-large;
+            @include secondary-base;
+
+            &:hover {
+                @include hover-color-animation;
+            }
+        }
+    }
+    .social-icons {
+        bottom: 1rem;
+        left: 1rem;
+        position: fixed;
+      }
+      
+      .link_style {
+        color: set-text-color($primary-color);
+        padding: 0.4rem;
+        @include transition-ease;
+      
+        &:hover {
+            @include hover-color-animation;
+            font-size: 30px;
+        }
+      }
+}
+

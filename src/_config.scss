@@ -1,64 +1,64 @@
-$primary-color: #0a0908;
-$accent-color: #43c59e;
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* SASS variables */
+
+$primary-color: #0a0908; 
+$accent-color: #e6c79c;
+$transition-color: #6df08c;
+
+/* SASS mixins */
+
+@mixin hover-color-animation {
+  animation-name: anim-hover-color;
+  animation-duration: 6s;
+  color: $accent-color;
 }
 
-  @mixin secondary-base {
-    color: $accent-color;
-    font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
-    letter-spacing: .3rem;
-  }
+@mixin hover-color-animation-two {
+  animation-name: anim-hover-color-two;
+  animation-duration: 3s;
+  color: set-text-color($primary-color);
+}
 
-  @mixin default-layout {
-    color: set-text-color($primary-color);
-    height: 100vh;
-  }
+@mixin transition-ease {
+  transition: all 0.5s ease-in-out;
+}
 
-  @mixin default-text-layout {
-    font-family: 'Marvel', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    letter-spacing: .2rem;
-    text-align: center;
-    justify-content: center;
-    height: 100%;
+@mixin media-md {
+  @media screen and (min-width: 700px) {
+    @content;
   }
+}
 
-  @mixin hover-color-animation {
-    animation-name: anim-menu-btn;
-    animation-duration: 6s;
-    color: #b4a6ab;
+@mixin media-lg {
+  @media screen and (min-width: 1024px) {
+    @content;
   }
+}
 
-  @mixin transition-ease {
-      transition: all 0.5s ease-in-out;
+@mixin media-xl {
+  @media screen and (min-width: 1600px) {
+    @content;
   }
+}
 
-  @function set-text-color($color) {
-      @if (lightness($color) > 40%) {
-          @return #0a0908;
-      } @else {
-          @return #f2f4f3;
-      }
+/* SASS functions */
+
+@function set-text-color($color) {
+  @if (lightness($color) > 40%) {
+    @return #0a0908;
+  } @else {
+    @return #f2f4f3;
   }
+}
 
-  @keyframes anim-menu-btn {
-    from {color: $accent-color};
-    to {color: #b4a6ab};
-  }
+/* keyframe animations */
 
-  @mixin media-md {
-    @media screen and (min-width: 700px) {
-      @content;
-    }
-  }
+@keyframes anim-hover-color {
+  from {color: $accent-color};
+  to {color: $transition-color};
+}
 
-  
-$font-weights: (
-  "regular": 400,
-  "medium": 500,
-  "bold": 700
-);
-$mobile: 800px;
+@keyframes anim-hover-color-two {
+  from {color: $accent-color};
+  to {color: set-text-color($primary-color)};
+}

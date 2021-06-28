@@ -1,61 +1,87 @@
 @import '../config';
 
+/* main page */
+
 .home {
-    padding-left: .5rem;
-    padding-right: .5rem;
-    height: 100%;
-    padding-top: 60vh;
-    overflow: hidden;
+  height: 100vh;
+  overflow: hidden;
+  padding: 0 0.5rem 0 0.5rem;
+  position: fixed;
+
+  &-body {
     align-items: center;
+    padding: 40vh 0;
+    position: fixed;
     text-align: center;
+    
     &_clock {
-        @include secondary-base;
-
-        &:hover {
-            @include hover-color-animation;
-        }
+      color: $accent-color;
+      font-family: Orbitron, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      letter-spacing: 0.3rem;
+      margin: 1rem;
     }
-
-    .self {
-        width: 50%;
-    }
-
+    
     &_name {
-        font-family: Marvel, 'Times New Roman', Times, serif;
-        font-size: 5rem;
-        padding-bottom: 1rem;
-        margin-bottom: 1rem;
-        border-bottom: 2px solid set-text-color($primary-color);
-
-        &--last {
-            font-family: Marvel, Verdana, Geneva, Tahoma, sans-serif;
-            color: $accent-color;
-            letter-spacing: .2rem;
-
-            &:hover {
-                @include hover-color-animation;
-            }
-        }
-    }
-    &_job-title {
-        font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
-        letter-spacing: .5rem;
-        padding-top: 1rem;
-    }
-    .social-icons {
-        bottom: 1rem;
-        left: 1rem;
-        position: fixed;
-      }
+      border-bottom: 2px inset set-text-color($primary-color);
+      font-family: Marvel, 'Times New Roman', Times, serif;
+      font-size: 5rem;
+      margin: 1rem;
+      padding: 0 0 1rem;
       
-      .link_style {
-        color: set-text-color($primary-color);
-        padding: 0.4rem;
-        @include transition-ease;
-      
-        &:hover {
-            @include hover-color-animation;
-          font-size: 30px;
-        }
+      &-last {
+        color: $accent-color;
+        font-family: Marvel, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        letter-spacing: .2rem;
       }
+    }
+    
+    &_profession {
+      font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
+      letter-spacing: .5rem;
+      padding-top: 1rem;
+
+      &-conjunction {
+        color: $transition-color;
+      }
+    }
+  }
+
+  /* social icons and footer */
+
+  .social-icons {
+    bottom: 1rem;
+    left: 1rem;
+    position: fixed;
+  }
+  
+  .link_style {
+    color: set-text-color($primary-color);
+    padding: 0.4rem;
+    @include transition-ease;
+    
+    &:hover {
+      font-size: 30px;
+      @include hover-color-animation;
+    }
+  }
+  
+  .footer {
+    bottom: 0.5rem;
+    color: set-text-color($primary-color);
+    font-size: 1rem;
+    letter-spacing: .1rem;
+    padding: 1rem;
+    position: fixed;
+    right: 1rem;
+    text-align: right;
+    
+    &_copyright {
+
+      &-year {
+        color: $accent-color;
+        font-family: Orbitron, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      }
+    }
+  }
+
 }

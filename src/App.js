@@ -1,23 +1,26 @@
-import "./App.scss";
-import React from 'react';
+import React, { useState } from 'react';
 import { Route, Switch } from 'react-router-dom';
-import Footer from './footer/Footer';
 import Home from './home/Home';
-import Header from './header/Header';
 import About from './about/About';
 import Contact from './contact/Contact';
-import NoMatch from './utlis/NoMatch';
+import NoMatch from './utils/NoMatch';
 
 
 function App() {
+  const [ backgroundOpen, setBackgroundOpen ] = useState(false);
 
-
+  const backgroundToggle = () => {
+    if (!backgroundOpen) {
+      setBackgroundOpen(true);
+    } else {
+      setBackgroundOpen(false);
+    }
+  }
   return (
     <>
-    <Header />
       <Switch>
         <Route exact path="/">
-          <Home />
+          <Home backgroundOpen={backgroundOpen} backgroundToggle={backgroundToggle} />
         </Route>
         <Route path="/about">
           <About />
@@ -29,7 +32,6 @@ function App() {
           <NoMatch />
         </Route>
     </Switch>
-    <Footer />
   </>
   );
 }

@@ -1,0 +1,149 @@
+@import "../config";
+
+.dyn_background {
+
+.panel1{background-image:
+    linear-gradient(to right,
+    rgba($primary-color, 0.1),
+    rgba($primary-color, 0.3)),
+    url('./self-desert-p1.jpg');
+    background-size: cover;
+    @include transition-ease;
+}
+
+.panel2{background-image:
+    linear-gradient(to right,
+    rgba($primary-color, 0.3),
+    rgba($primary-color, 0.6)),
+    url('./self-desert-p2.jpg');
+    background-size: cover;
+    border-color: $accent-color;
+    border-style: inset;
+    border-width: .1rem;
+    @include transition-ease;
+
+    .welcome {
+      text-transform: uppercase;
+      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
+      font-size: 1.5rem;
+      position: fixed;
+        color: $accent-color;
+        letter-spacing: .5em;
+        @include transition-ease;
+
+        &.open {
+          color: $primary-color;
+          visibility: hidden;
+          transform: translate(-200%);
+          @include transition-ease;
+        }
+
+    }
+
+    &:hover {
+      cursor: pointer;
+      @include transition-ease;
+
+      .welcome {
+      cursor: pointer;
+      @include transition-ease;
+      }
+    }
+}
+
+.panel3{background-image:
+    linear-gradient(to right,
+    rgba($primary-color, 0.6),
+    rgba($primary-color, 0.8)),
+    url('./self-desert-p3.jpg');
+    background-size: cover;
+    @include transition-ease;
+}
+
+.panel4{background-image:
+    linear-gradient(to right,
+    rgba($primary-color, 0.8),
+    rgba($primary-color, 1.0)),
+    url('./self-desert-p4.jpg');
+    background-size: cover;
+    @include transition-ease;
+}
+
+  .panels {
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    @include transition-ease;
+
+    &.open {
+      @include transition-ease;
+      transition-delay: 1.7s;
+      transition-duration: 1s;
+    }
+  }
+
+  .panel {
+    box-shadow: inset 0 0 0 5px rgba(255,255,255,0.1);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    align-items: center;
+    transition:
+      font-size 10.7s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+      flex 1s cubic-bezier(0.61,-0.19, 0.7,-0.11),
+      background 10s;
+    flex: 1;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    @include transition-ease;
+
+    &.open {
+      border-color: $accent-color;
+      transform: translate(-100%);
+      height: 100vh;
+      border-style: inset;
+      border-width: .1rem;
+      @include transition-ease;
+    }
+  }
+
+  @for $i from 1 through 8 {
+    .panel:nth-child(#{$i}) {
+        transition-delay: ($i * 0.2s) + .1s;
+        transition-duration: ($i * 0.2s) + .1s;
+    }
+  }
+
+  .panel > * {
+    margin: 0;
+    width: 100%;
+    transition: transform 0.5s;
+    flex: 1 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .social-icons {
+    top: 20vh;
+    position: fixed;
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  
+  .link_style {
+    color: set-text-color($primary-color);
+    font-size: 1.8rem;
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+    @include transition-ease;
+  
+    &:hover {
+        transform: translateY(-15%);
+        font-size: 3em;
+        @include hover-color-animation;
+    }
+  }
+}

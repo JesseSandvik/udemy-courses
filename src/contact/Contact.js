@@ -1,33 +1,45 @@
 import React from 'react';
-import './Contact.scss';
+
+import Header from '../header/Header';
+import Footer from '../footer/Footer';
+
+import SocialIcons from '../utils/Social-Icons';
 
 function Contact() {
     return (
-        <main>
         <section className="contact">
-            <h2 className="contact_title"><b>CONTACT ME</b></h2>
-            <div className="contact_body">
-            <p className="contact_body-item">Please feel free to contact me with any questions or inquiries.</p>
-            <p className="contact_body-item">Thanks for stopping by!</p>
-            <div className="contact_box">
-            <div className="contact_box_item">
-            <h3 className="contact_box_item_text">Linked<i className="fab fa-linkedin-in fa-2x"></i></h3>
-            <a href="https://www.linkedin.com/in/jesse-sandvik-3b91b620a/" className="contact_box_item_link">linkedin.com/in/jesse-sandvik/</a>
+        <Header />
+        <div className="contact_bio">
+        <h2 className="contact_bio-title"><b>Contact Me</b></h2>
+        <p className="contact_bio-item">Please feel free to reach out if you have any questions of inquiries. Thank you for stopping by!</p>
+        </div>
+        <div className="contact_body">
+        <div className="social-icons">
+            <div className="social-icons_item">
+            <a href="https://www.linkedin.com/in/jesse-sandvik-3b91b620a/" className="link_style">
+            <i className="fab fa-linkedin-in fa-2x"></i>
+            </a>
+            <h3>LinkedIn</h3>
+            <p>Contact me via email with any questions, business inquiries, potential opportunities, or even just to say hi!</p>
             </div>
-            <br />
-            <div className="contact_box_item">
-            <h3 className="contact_box_item_text">GitHub<i className="fab fa-github fa-2x"></i></h3>
-            <a href="https://github.com/JesseSandvik" className="contact_box_item_link">github.com/JesseSandvik</a>
+            <div className="social-icons_item">
+            <a href="https://github.com/JesseSandvik" className="link_style">
+            <i className="fab fa-github fa-2x"></i>
+            </a>
+            <h3>GitHub</h3>
+            <p>Contact me via email with any questions, business inquiries, potential opportunities, or even just to say hi!</p>
             </div>
-            <br />
-            <div className="contact_box_item">
-            <h3 className="contact_box_item_text">eMail<i className="fas fa-at fa-2x"></i></h3>
-            <a href="mailto: sandvikjesse@gmail.com" className="contact_box_item_link">sandvikjesse@gmail.com</a>
+            <div className="social-icons_item">
+            <a href="mailto: sandvikjesse@gmail.com" className="link_style">
+            <i className="fas fa-at fa-2x"></i>
+            </a>
+            <h3>Email</h3>
+            <p>Contact me via email with any questions, business inquiries, potential opportunities, or even just to say hi!</p>
             </div>
-            </div>
-            </div>
+        </div>
+        </div>
+        <Footer />
         </section>
-        </main>
     )
 }
 

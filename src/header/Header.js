@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import classNames from "../utlis/ClassNames";
+
+import classNames from "../utils/ClassNames";
 
 function Header() {
     const [open, setOpen] = useState(false);
@@ -15,10 +16,10 @@ function Header() {
     
     return (
         <header>
-                        <div className="menu-btn" onClick={handleToggle}>
+                        <div className="burger-btn" onClick={handleToggle}>
                             <span className={classNames({
-                                "menu-btn_burger": !open,
-                                "menu-btn_burger open": open,
+                                "burger-btn_menu": !open,
+                                "burger-btn_menu open": open,
                                 })}></span>
                                 </div>
                                 <nav className={classNames({
@@ -26,28 +27,28 @@ function Header() {
                                 "nav open": open,
                                 })}>
                                     <ul className={classNames({
-                                        "menu-nav": !open,
-                                        "menu-nav open": open,
+                                        "nav-menu": !open,
+                                        "nav-menu open": open,
                                         })}>
                     <li className={classNames({
-                                        "menu-nav_item": !open,
-                                        "menu-nav_item open": open,
+                                        "nav-menu_item": !open,
+                                        "nav-menu_item open": open,
                                         })}>
-                        <Link to="/" className="menu-nav_link" onClick={handleToggle}>Home</Link>
+                        <Link to="/" className="nav-menu_link" onClick={handleToggle}>Home</Link>
                         </li>
                         <br></br>
                         <li className={classNames({
-                                        "menu-nav_item": !open,
-                                        "menu-nav_item open": open,
+                                        "nav-menu_item": !open,
+                                        "nav-menu_item open": open,
                                         })}>
-                            <Link to="/about" className="menu-nav_link" onClick={handleToggle}>About</Link>
+                            <Link to="/about" className="nav-menu_link" onClick={handleToggle}>About</Link>
                             </li>
                             <br></br>
                             <li className={classNames({
-                                        "menu-nav_item": !open,
-                                        "menu-nav_item open": open,
+                                        "nav-menu_item": !open,
+                                        "nav-menu_item open": open,
                                         })}>
-                                <Link to="/contact" className="menu-nav_link" onClick={handleToggle}>Contact</Link>
+                                <Link to="/contact" className="nav-menu_link" onClick={handleToggle}>Contact</Link>
                                     </li>
                                     </ul>
                                     </nav>

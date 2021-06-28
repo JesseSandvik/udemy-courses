@@ -1,0 +1,135 @@
+@import "../config";
+
+header {
+  padding: 1rem;
+  position: fixed;
+  width: 100%;
+  z-index: 2;
+  
+  .burger-btn {
+    cursor: pointer;
+    height: 20px;
+    position: fixed;
+    right: 1rem;
+    top: 1rem;
+    width: 28px;
+    z-index: 1;
+    @include transition-ease;
+    
+    &_menu {
+      background: set-text-color($primary-color);
+      height: 2px;
+      position: absolute;
+      right: 0;
+      top: 0.5rem;
+      width: 28px;
+      @include transition-ease;
+      
+      &::before {
+        background: set-text-color($primary-color);
+        content: '';
+        height: 3px;
+        position: absolute;
+        top: -8px;
+        width: 28px;
+        @include transition-ease;
+      }
+      
+      &::after {
+        background: set-text-color($primary-color);
+        content: '';
+        height: 3px;
+        position: absolute;
+        top: 8px;
+        width: 20px;
+        @include transition-ease;
+      }
+
+      &.open {
+        background: transparent;
+        transform: rotate(720deg);
+
+        &::before {
+          transform: rotate(45deg) translate(5px, 8px);
+        }
+
+        &::after {
+          transform: rotate(-45deg) translate(3px, -7px);
+          width: 28px;
+        }
+
+      }
+
+    }
+
+  }
+
+  .nav {
+    left: 0;
+    opacity: 0.98;
+    position: fixed;
+    top: 0;
+    visibility: hidden;
+    width: 100vw;
+
+    &.open {
+      visibility: visible;
+    }
+
+    &-menu {
+      align-items: center;
+      background: $primary-color;
+      display: flex;
+      flex-flow: column wrap;
+      height: 100vh;
+      justify-content: center;
+      list-style-type: none;
+      overflow: hidden;
+      padding: 0 1rem;
+      transform: translate(0, -100%);
+      @include transition-ease;
+
+      &.open {
+        transform: translate(0, 0);
+      }
+
+      &_item {
+        transform: translate(100vw);
+        @include transition-ease;
+
+        &.open {
+          transform: translate(0);
+        }
+  
+      }
+
+      &_link {
+        color: set-text-color($primary-color);
+        display: inline-block;
+        font-family: Orbitron, 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 2rem;
+        letter-spacing: .3rem;
+        padding: 2rem 0;
+        text-decoration: none;
+        text-transform: uppercase;
+        @include transition-ease;
+
+        &:hover {
+          letter-spacing: .7rem;
+          @include hover-color-animation;
+        }
+      }
+
+    }
+
+  }
+
+}
+
+@for $i from 1 through 8 {
+  
+  .nav-menu_item:nth-child(#{$i}) {
+      transition-delay: ($i * 0.1s) + .12s;
+  }
+
+}

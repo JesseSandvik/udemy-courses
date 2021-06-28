@@ -7,7 +7,7 @@
 
 @-webkit-keyframes anim-menu-btn {
   from {
-    color: #43c59e;
+    color: #e6c79c;
   }
   to {
     color: #b4a6ab;
@@ -16,7 +16,7 @@
 
 @keyframes anim-menu-btn {
   from {
-    color: #43c59e;
+    color: #e6c79c;
   }
   to {
     color: #b4a6ab;
@@ -36,9 +36,6 @@
 }
 
 .about_title {
-  color: #43c59e;
-  font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: .3rem;
   padding-bottom: 5vh;
   border-bottom: 2px solid #f2f4f3;
 }
@@ -98,9 +95,6 @@
   padding-top: 2.5vh;
   padding-right: 5vh;
   font-size: x-large;
-  color: #43c59e;
-  font-family: Orbitron, Verdana, Geneva, Tahoma, sans-serif;
-  letter-spacing: .3rem;
 }
 
 .about_body_list-item:hover {

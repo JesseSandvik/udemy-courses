@@ -1,21 +1,21 @@
-import React from 'react';
-import Clock from '../utlis/Clock';
-import SocialIcons from "../utlis/Social-Icons";
+import React from "react";
 
-function Home() {
+import DynamicBackground from "../panels/DynamicBackground";
+import Header from "../header/Header";
+import Footer from "../footer/Footer";
+
+function Home({ backgroundOpen, backgroundToggle }) {
+    
     return (
-        <main>
-            <section className="home">
-                <span className="home_clock"><h2><Clock /></h2></span>
-                <br/>
-                <h2>My Name Is</h2>
-                <h1 className="home_name">
-                    <strong>Jesse <span className="home_name--last">Sandvik</span></strong>
-                </h1>
-                <h2 className="home_job-title"><strong>Software Developer, Web Designer & Programmer</strong></h2>
-                {SocialIcons()}
-            </section>
-        </main>
+        <>
+    <DynamicBackground backgroundOpen={backgroundOpen} backgroundToggle={backgroundToggle} />
+    <section className="home">
+        {backgroundOpen &&(
+        <Header />
+        )}
+        <Footer />
+    </section>
+    </>
     );
 }
 

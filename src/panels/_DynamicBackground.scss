@@ -18,16 +18,16 @@
     url('./self-desert-p2.jpg');
     background-size: cover;
     border-color: $accent-color;
-    border-style: inset;
+    border-style: ridge;
     border-width: .1rem;
     @include transition-ease;
 
     .welcome {
       text-transform: uppercase;
-      text-shadow: 0 0 4px rgba(0, 0, 0, 0.72), 0 0 14px rgba(0, 0, 0, 0.45);
-      font-size: 1.5rem;
+      text-shadow: 0 5px 5px $accent-color;
+      font-size: 2rem;
       position: fixed;
-        color: $accent-color;
+        color: $primary-color;
         letter-spacing: .5em;
         @include transition-ease;
 
@@ -41,10 +41,12 @@
     }
 
     &:hover {
+      box-shadow: inset 0 0 0 1px #ffffff;
       cursor: pointer;
       @include transition-ease;
 
       .welcome {
+        color: set-text-color($primary-color);
       cursor: pointer;
       @include transition-ease;
       }
@@ -66,7 +68,48 @@
     rgba($primary-color, 1.0)),
     url('./self-desert-p4.jpg');
     background-size: cover;
+    color: $primary-color;
     @include transition-ease;
+
+    .social-icons {
+      top: 25vh;
+      position: fixed;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .link_style {
+      color: $primary-color;
+      font-size: 2rem;
+      padding-top: 2.5rem;
+      padding-bottom: 2.5rem;
+      text-shadow: 0 5px 10px $accent-color;
+      @include transition-ease;
+    
+      &:hover {
+        color: #ffffff;
+          font-size: 2.5em;
+      }
+    }
+
+    &.open {
+
+      .social-icons {
+        transform: translate(100%);
+        transition-delay: 2s;
+        @include transition-ease;
+      }
+
+      .link_style {
+        color: set-text-color($primary-color);
+        font-size: 1.5rem;
+        padding: 5vh 0 5vh;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
 }
 
   .panels {
@@ -103,7 +146,7 @@
       border-color: $accent-color;
       transform: translate(-100%);
       height: 100vh;
-      border-style: inset;
+      border-style: outset;
       border-width: .1rem;
       @include transition-ease;
     }
@@ -124,26 +167,5 @@
     display: flex;
     justify-content: center;
     align-items: center;
-  }
-
-  .social-icons {
-    top: 20vh;
-    position: fixed;
-    display: flex;
-    flex-direction: column-reverse;
-  }
-  
-  .link_style {
-    color: set-text-color($primary-color);
-    font-size: 1.8rem;
-    padding-top: 2.5rem;
-    padding-bottom: 2.5rem;
-    @include transition-ease;
-  
-    &:hover {
-        transform: translateY(-15%);
-        font-size: 3em;
-        @include hover-color-animation;
-    }
   }
 }

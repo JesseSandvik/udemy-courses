@@ -1,1 +1,44 @@
-@include media-md {}
+@include media-mob{
+
+  .nav {
+    visibility: hidden;
+    
+    &-menu {
+      visibility: hidden;
+    }
+  }
+
+  .dyn_background {
+
+    .panel2 {
+
+      .welcome{
+        visibility: hidden;
+      }
+
+    }
+
+  }
+  
+  .home {
+    
+    .intro {
+      color: set-text-color($primary-color);
+      transform: translate(0);
+      visibility: visible;
+    }
+
+  }
+  
+}
+
+@include media-md {
+
+  .burger-btn {
+    visibility: hidden;
+    
+    &_menu {
+      visibility: hidden;
+    }
+  }
+}

@@ -1,21 +1,26 @@
 import React from "react";
 
+import MenuBurger from "../header/MenuBurger";
+import DynamicHeaderMenu from "../header/DynamicHeaderMenu";
 import DynamicBackground from "../panels/DynamicBackground";
-import Header from "../header/Header";
 import Footer from "../footer/Footer";
+import Intro from "../intro/Intro";
 
-function Home({ backgroundOpen, backgroundToggle }) {
+function Home(props) {
     
     return (
-        <>
-    <DynamicBackground backgroundOpen={backgroundOpen} backgroundToggle={backgroundToggle} />
-    <section className="home">
-        {backgroundOpen &&(
-        <Header />
-        )}
+        <section>
+    <DynamicBackground menuToggle={props.menuToggleHandler}
+                       openBackground={props.openBackground}
+                       backgroundToggle={props.backgroundToggle}
+                       />
+                       <div className="home">
+                       <Intro openBackground={props.openBackground} backgroundToggle={props.backgroundToggle} />
+                     <DynamicHeaderMenu openBackground={props.openBackground} backgroundToggle={props.backgroundToggle} />
         <Footer />
+        <MenuBurger menuIsOpen={props.menuIsOpen} menuToggle={props.menuToggleHandler} />
+        </div>
     </section>
-    </>
     );
 }
 

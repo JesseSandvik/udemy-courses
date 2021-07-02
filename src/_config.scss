@@ -23,6 +23,11 @@ $transition-color: #6df08c;
   transition: all 0.5s ease-in-out;
 }
 
+@mixin media-mob {
+  @media screen and (max-width: 700px) {
+    @content;
+  }
+}
 @mixin media-md {
   @media screen and (min-width: 700px) {
     @content;

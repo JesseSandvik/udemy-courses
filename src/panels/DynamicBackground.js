@@ -5,41 +5,45 @@ import SocialIcons from "../utils/Social-Icons";
 
 function DynamicBackground(props) {
 
+    const backgroundClickHandler = () => {
+        props.backgroundToggle()
+    };
+
     return (
         <div className={classNames({
-            "dyn_background": props.backgroundOpen,
-            "dyn_background open": !props.backgroundOpen
+            "dyn_background": props.openBackground,
+            "dyn_background open": !props.openBackground
         })}>
         <div className={classNames({
-            "panels": !props.backgroundOpen,
-            "panels open": props.backgroundOpen,
+            "panels": !props.openBackground,
+            "panels open": props.openBackground,
         })}>
             <div className={classNames({
-                 "panel panel1": !props.backgroundOpen,
-                 "panel panel1 open": props.backgroundOpen,
+                 "panel panel1": !props.openBackground,
+                 "panel panel1 open": props.openBackground,
                 })}>
             </div>
-            <div onClick={props.backgroundToggle}
+            <div onClick={backgroundClickHandler}
                  className={classNames({
-                 "panel panel2": !props.backgroundOpen,
-                 "panel panel2 open": props.backgroundOpen,
+                 "panel panel2": !props.openBackground,
+                 "panel panel2 open": props.openBackground,
                 })}>
-                    <h2 onClick={props.backgroundToggle}
+                    <h2 onClick={backgroundClickHandler}
                         className={classNames({
-                        "welcome": !props.backgroundOpen,
-                        "welcome open": props.backgroundOpen
+                        "welcome": !props.openBackground,
+                        "welcome open": props.openBackground
                     })}>
                         Welcome.
                     </h2>
             </div>
             <div className={classNames({
-                 "panel panel3": !props.backgroundOpen,
-                 "panel panel3 open": props.backgroundOpen,
+                 "panel panel3": !props.openBackground,
+                 "panel panel3 open": props.openBackground,
                  })}>
             </div>
             <div className={classNames({
-                 "panel panel4": !props.backgroundOpen,
-                 "panel panel4 open": props.backgroundOpen,
+                 "panel panel4": !props.openBackground,
+                 "panel panel4 open": props.openBackground,
                  })}>
                      <SocialIcons />
             </div>
@@ -48,4 +52,6 @@ function DynamicBackground(props) {
             )
     }
     
+    //menuToggle={props.menuToggleHandler}
+
     export default DynamicBackground;

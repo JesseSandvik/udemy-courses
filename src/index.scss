@@ -1,11 +1,10 @@
 @import "./config";
 
+@import "./header/MenuBurger";
 @import "./panels/DynamicBackground";
-@import "./header/Header";
 @import "./home/Home";
 @import "./about/About";
 @import "./contact/Contact";
-
 @import "./responsive";
 
 * {

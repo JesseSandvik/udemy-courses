@@ -1,13 +1,14 @@
 import React, { useState } from 'react';
 
 import Header from '../header/Header';
+import MenuBurger from '../header/MenuBurger';
 import Footer from '../footer/Footer';
 
 import classNames from '../utils/ClassNames';
 import SocialIcons from '../utils/Social-Icons';
 
-function About() {
-    const [ openFront, setOpenFront ] = useState(false);
+function About(props) {
+    const [ openFront, setOpenFront ] = useState(true);
     const [ openBack, setOpenBack ] = useState(false);
     const [ openAdd, setOpenAdd ] = useState(false);
 
@@ -49,7 +50,7 @@ function About() {
                     "about_body-title": !openFront,
                     "about_body-title open": openFront,
                     })}
-                    >Front End Skills</h3>
+                    >Front End Skills{!openFront ? '+' : '-'}</h3>
                 <ul className={classNames({
                     "about_body_list": !openFront,
                     "about_body_list open": openFront,
@@ -68,7 +69,7 @@ function About() {
                     "about_body-title": !openBack,
                     "about_body-title open": openBack,
                     })}
-                    >Back End Skills</h3>
+                    >Back End Skills{!openBack ? '+' : '-'}</h3>
                 <ul className={classNames({
                     "about_body_list": !openBack,
                     "about_body_list open": openBack,
@@ -84,7 +85,7 @@ function About() {
                     "about_body-title": !openAdd,
                     "about_body-title open": openAdd,
                     })}
-                    >Additional Skills</h3>
+                    >Additional Skills{!openAdd ? '+' : '-'}</h3>
                 <ul className={classNames({
                     "about_body_list": !openAdd,
                     "about_body_list open": openAdd,
@@ -98,8 +99,9 @@ function About() {
                     </div>
             </div>
             <div>
-                            <SocialIcons />
-                            <Footer />
+                <SocialIcons />
+                <Footer />
+                <MenuBurger menuIsOpen={props.menuIsOpen} menuToggle={props.menuToggleHandler}/>
                             </div>
                             </section>
     )

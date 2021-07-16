@@ -36,6 +36,13 @@ function MenuBurger(props) {
       <Link to="/about" className="nav_burger_link" onClick={props.menuToggle}>About</Link>
       </li>
       <br></br>
+  <li className={classNames({
+    "nav_burger_item": !props.menuIsOpen,
+    "nav_burger_item open": props.menuIsOpen
+    })}>
+      <Link to="/projects" className="nav_burger_link" onClick={props.menuToggle}>Projects</Link>
+      </li>
+      <br></br>
       <li className={classNames({
     "nav_burger_item": !props.menuIsOpen,
     "nav_burger_item open": props.menuIsOpen

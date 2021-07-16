@@ -15,12 +15,15 @@ function Header() {
                             <Link to="/about" className="nav-menu_link">About</Link>
                             </li>
                             <br></br>
-                            <li className="nav-menu_item">
-                                <Link to="/contact" className="nav-menu_link">Contact</Link>
-                                    </li>
+                                    <li className="nav-menu_item">
+                                        <Link to="/projects" className="nav-menu_link">Projects</Link>
+                                            </li>
+                                            <li className="nav-menu_item">
+                                                <Link to="/contact" className="nav-menu_link">Contact</Link>
+                                                    </li>
                                     </ul>
-                                    </nav>
-                                    </header>
+            </nav>
+        </header>
     );
 }
 

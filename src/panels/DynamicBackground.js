@@ -33,7 +33,7 @@ function DynamicBackground(props) {
                         "welcome": !props.openBackground,
                         "welcome open": props.openBackground
                     })}>
-                        Welcome.
+                        Open.
                     </h2>
             </div>
             <div className={classNames({

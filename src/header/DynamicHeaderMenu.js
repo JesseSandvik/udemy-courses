@@ -41,6 +41,16 @@ function DynamicHeaderMenu(props) {
                     "nav-menu_item": !props.openBackground,
                     "nav-menu_item open": props.openBackground
                     })}>
+            <Link to="/projects" onClick={props.backgroundToggle}
+                 className={classNames({
+                    "nav-menu_link": !props.openBackground,
+                    "nav-menu_link open": props.openBackground,
+                    })}>Projects</Link>
+                </li>
+        <li className={classNames({
+                    "nav-menu_item": !props.openBackground,
+                    "nav-menu_item open": props.openBackground
+                    })}>
             <Link to="/contact" onClick={props.backgroundToggle}
                  className={classNames({
                     "nav-menu_link": !props.openBackground,

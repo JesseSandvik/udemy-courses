@@ -75,8 +75,9 @@ function About(props) {
                     "about_body_list open": openBack,
                     })}>
                     <li className="about_body_list-item">Node.js</li>
-                    <li className="about_body_list-item">PostGreSQL</li>
                     <li className="about_body_list-item">Express</li>
+                    <li className="about_body_list-item">REST APIs</li>
+                    <li className="about_body_list-item">PostGreSQL</li>
                     </ul>
                     </div>
                 <div className="about_body-item">
@@ -93,7 +94,6 @@ function About(props) {
                     <li className="about_body_list-item">Mocha / Chai</li>
                     <li className="about_body_list-item">Git</li>
                     <li className="about_body_list-item">GitHub</li>
-                    <li className="about_body_list-item">RESTful APIs</li>
                     <li className="about_body_list-item">NPM (Node Package Manager)</li>
                     </ul>
                     </div>

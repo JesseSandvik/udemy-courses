@@ -3,6 +3,7 @@ import { Route, Switch } from 'react-router-dom';
 
 import Home from './home/Home';
 import About from './about/About';
+import Projects from './projects/Projects';
 import Contact from './contact/Contact';
 
 import NoMatch from './utils/NoMatch';
@@ -41,6 +42,10 @@ function App() {
         </Route>
         <Route path="/about">
           <About menuIsOpen={menuIsOpen}
+                menuToggleHandler={menuToggleHandler}/>
+        </Route>
+        <Route path="/projects">
+          <Projects menuIsOpen={menuIsOpen}
                 menuToggleHandler={menuToggleHandler}/>
         </Route>
         <Route path="/contact">

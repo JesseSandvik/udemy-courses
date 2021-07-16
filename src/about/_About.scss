@@ -4,7 +4,7 @@
 
 .about {
     overflow: hidden;
-    padding: 5vh 1vw 10vh 1vw;
+    padding: 10vh 1vw 10vh 1vw;
 
     .nav {
         position: fixed;
@@ -163,8 +163,8 @@
         
         &:hover {
             color: $primary-color;
-            font-size: 30px;
-            transition-duration:1s;
+            font-size: 24px;
+            transition-duration:.5s;
         }
       }
       

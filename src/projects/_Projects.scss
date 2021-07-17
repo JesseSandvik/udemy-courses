@@ -115,11 +115,12 @@
     }
 
     .pom {
-        padding: 1vh 0 2vh;
+        padding: 1vh 0 0;
 
         &_thumbnail {
-            width: 0;
+            padding: 1vh;
             visibility: hidden;
+            width: 0%;
             @include transition-ease;
 
             &.open {
@@ -128,23 +129,28 @@
                 @include transition-ease;
             }
         }
+
+        &-link {
+            color: $accent-color;
+            font-size: 2rem;
+            padding: .8rem;
+            text-shadow: 0 2px 18px $accent-color;
+
+        &:hover {
+            color: $primary-color;
+        }
+    }
         
         &_description {
-            padding: 1rem;
             visibility: hidden;
             @include transition-ease;
 
-            &.open a{
-                color: set-text-color($primary-color);
+            &.open {
                 font-size: 1.2rem;
-                padding: .5rem;
+                padding: 1rem;
                 text-decoration: none;
                 visibility: visible;
                 @include transition-ease;
-
-                &:hover {
-                    @include hover-color-animation;
-                }
             }
         }
     }

@@ -5,7 +5,7 @@ import MenuBurger from '../header/MenuBurger';
 import Footer from '../footer/Footer';
 
 import classNames from '../utils/ClassNames';
-import pomodoroImage from "../images/pom-timer.png";
+import pomodoroImage from "../images/pomodoro-thumbnail.png";
 import SocialIcons from '../utils/Social-Icons';
 
 function Projects(props) {
@@ -24,7 +24,7 @@ function Projects(props) {
             <Header />
             <div className="projects_bio">
             <h2 className="projects_bio-title"><b>Projects</b></h2>
-            <p className="projects_bio-item">Here are some of my recent projects. Stay tuned for updates!</p>
+            <p className="projects_bio-item">Here is a collection of my recent projects. Included is a brief description of the application, a link to the deployed application (if applicable), and a link to the repository for the project.</p>
             </div>
             <div className="projects_body">
                 <div className="projects_body-item">
@@ -41,21 +41,24 @@ function Projects(props) {
                     >
                 <li className="projects_body_list-item">
                     <div className="pom">
-                <img src={pomodoroImage}
-                     alt="pomodoro timer thumbnail"
-                     className={classNames({
-                    "pom_thumbnail": !openPom,
-                    "pom_thumbnail open": openPom,
-                    })}
-                    />
-                </div>
+                        <p>The pomodoro timer is designed around the work/break interval system of the pomodoro technique.</p>
+                        <p>This application was built using JavaScript, HTML, CSS, Bootstrap, and React.</p>
+                        <p>It was tested locally using Node.js.</p>
+                            <img src={pomodoroImage}
+                                 alt="pomodoro timer thumbnail"
+                                 className={classNames({
+                                 "pom_thumbnail": !openPom,
+                                 "pom_thumbnail open": openPom,
+                                 })}
+                                 />
+                    </div>
                 <div className={classNames({
                     "pom_description": !openPom,
                     "pom_description open": openPom,
                 })}
                 >
-                <a href="https://pomodoro-timer-project-three.vercel.app/">Pomodoro Timer 1.0</a>
-                <a href="https://pomodoro-timer-project-three.vercel.app/"><i className="fas fa-link"></i></a>
+                <a href="https://pomodoro-timer-project-three.vercel.app/" className="pom-link"><i className="fas fa-link"></i></a>
+                <a href="https://github.com/JesseSandvik/Pomodoro-Timer-Project" className="pom-link"><i className="fab fa-github fa"></i></a>
                 </div>
                 </li>
                 </ul>

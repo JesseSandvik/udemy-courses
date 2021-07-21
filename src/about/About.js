@@ -48,7 +48,6 @@ function About(props) {
 
     return (
         <section className="about">
-            <Header />
             <div className="about_bio">
             <h2 className="about_bio-title"><b>About Me</b></h2>
             <p className="about_bio-item">Hello! My name is Jesse, I am a front-end software engineer experienced in React, JavaScript, HTML, CSS, CSS-Bootstrap, & SASS.</p>
@@ -128,6 +127,7 @@ function About(props) {
             <div>
                 <SocialIcons />
                 <Footer />
+                <Header />
                 <MenuBurger menuIsOpen={props.menuIsOpen} menuToggle={props.menuToggleHandler}/>
                             </div>
                             </section>

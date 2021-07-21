@@ -7,7 +7,6 @@ import Footer from '../footer/Footer';
 function Contact(props) {
     return (
         <section className="contact">
-        <Header />
         <div className="contact_bio">
         <h2 className="contact_bio-title"><b>Contact Me</b></h2>
         <p className="contact_bio-item">Please feel free to reach out if you have any questions of inquiries. Thank you for stopping by!</p>
@@ -36,6 +35,7 @@ function Contact(props) {
             </div>
         </div>
         <Footer />
+        <Header />
         <MenuBurger menuIsOpen={props.menuIsOpen} menuToggle={props.menuToggleHandler}/>
         </section>
     )

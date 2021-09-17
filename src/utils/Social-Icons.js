@@ -6,6 +6,7 @@ function SocialIcons() {
             <a href="https://www.linkedin.com/in/jesse-sandvik-3b91b620a/" className="link_style">
             <i className="fab fa-linkedin-in fa-2x"></i>
             </a>
+            <i className="fas fa-blog fa-2x"></i>
             <a href="https://github.com/JesseSandvik" className="link_style">
             <i className="fab fa-github fa-2x"></i>
             </a>

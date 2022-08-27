@@ -1,12 +1,21 @@
-class Hello extends React.Component {
+class HelloClassComponent extends React.Component {
   render() {
     return (
       <div>
         <h1>Hello World!</h1>
-        <p>This is a new element</p>
+        <p>This is a class component.</p>
       </div>
     );
   }
 }
 
-ReactDOM.render(<Hello />, document.getElementById("root"));
+function HelloFunctionalComponent() {
+  return (
+    <div>
+      <h1>Hello World!</h1>
+      <p>This is a functional component.</p>
+    </div>
+  );
+}
+
+ReactDOM.render(<HelloFunctionalComponent />, document.getElementById("root"));

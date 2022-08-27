@@ -9,13 +9,13 @@ class HelloClassComponent extends React.Component {
   }
 }
 
-function HelloFunctionalComponent() {
+function HelloFunctionComponent() {
   return (
     <div>
       <h1>Hello World!</h1>
-      <p>This is a functional component.</p>
+      <p>This is a function component.</p>
     </div>
   );
 }
 
-ReactDOM.render(<HelloFunctionalComponent />, document.getElementById("root"));
+ReactDOM.render(<HelloFunctionComponent />, document.getElementById("root"));

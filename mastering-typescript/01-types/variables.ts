@@ -76,3 +76,18 @@ function random(number: number): string | number {
         return number;
     }
 }
+
+const colors = ["red", "blue", "green"];
+// TS knows that each color is of type string, I don't need to tell it anything else.
+colors.map(color => color.toUpperCase());
+
+// TS sees and knows this is not supposed to return anything.
+function printTwice(message: string): void {
+    console.log(message);
+    console.log(message);
+}
+
+// never type should "never" have a chance to return anything, aka it "never" stops.
+function makeError(message: string): never {
+    throw new Error(message);
+}

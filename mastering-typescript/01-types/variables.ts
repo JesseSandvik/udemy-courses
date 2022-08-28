@@ -35,7 +35,7 @@ for (let movie of movies) {
     }
 }
 
-function square(num: number) {
+function square(num: number): number {
     return num * num;
 }
 
@@ -61,10 +61,18 @@ greet("Michael");
 
 doSomething("Michael", false);
 
-function greetPerson(person: string = "stranger") {
+function greetPerson(person: string = "stranger"): string {
     return `Hi, ${person}!`;
 }
 
 greetPerson();
 greetPerson("Adam");
 // greetPerson(4);
+
+function random(number: number): string | number {
+    if (Math.random() < 0.5) {
+        return number.toString();
+    } else {
+        return number;
+    }
+}

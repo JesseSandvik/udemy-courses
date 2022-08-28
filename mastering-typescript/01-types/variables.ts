@@ -24,3 +24,21 @@ thing = false;
 thing = {};
 thing();
 thing.doSomething();
+
+const movies = ["Arrival", "The Thing", "Alien", "Predator"];
+
+let foundMovie: string;
+
+for (let movie of movies) {
+    if (movie === "Predator") {
+        foundMovie = "Predator";
+    }
+}
+
+function square(num: number) {
+    return num * num;
+}
+
+// square(true);
+// square("15");
+square(4);

@@ -39,6 +39,32 @@ function square(num: number) {
     return num * num;
 }
 
+function greet(person: string) {
+    return `Hi, ${person}!`;
+}
+
+const doSomething = (person: string, isFunny: boolean) => {
+    if (isFunny) {
+        return `${person} is funny!`;
+    } else {
+        return "You're not funny";
+    }
+}
+
 // square(true);
 // square("15");
 square(4);
+
+// greet(4);
+// greet(false);
+greet("Michael");
+
+doSomething("Michael", false);
+
+function greetPerson(person: string = "stranger") {
+    return `Hi, ${person}!`;
+}
+
+greetPerson();
+greetPerson("Adam");
+// greetPerson(4);

@@ -22,6 +22,8 @@ printName(singer);
 type Point = {
     x: number;
     y: number;
+    // this tells typescript that this property is optional.
+    z?: number;
 };
 
 let coordinates: Point = { x: 32, y: 15 };

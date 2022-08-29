@@ -59,3 +59,51 @@ const trackInfo = {
 
 console.log(calculatePayout(trackInfo));
 printSong(trackInfo);
+
+// marks certain properties as read only
+type User = {
+    readonly id: number,
+    username: string,
+}
+
+const user: User = {
+    id: 12345,
+    username: "ggfam"
+}
+
+// typescript will throw an error here because we're trying to write to a readonly
+// user.id = 12345;
+
+// intersection Types
+type Circle = {
+    radius: number,
+}
+
+type Colorful = {
+    color: string,
+}
+
+type ColorfulCircle = Circle & Colorful;
+
+const happyFace: ColorfulCircle = {
+    radius: 4,
+    color: "yellow"
+}
+
+type Cat = {
+    numLives: number
+}
+
+type Dog = {
+    breed: string,
+}
+
+type CatDog = Cat & Dog & {
+    age: number,
+}
+
+const abomination: CatDog = {
+    numLives: 9,
+    breed: "who knows, run away!",
+    age: 5,
+}

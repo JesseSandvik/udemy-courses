@@ -32,3 +32,16 @@ var trackInfo = {
 };
 console.log(calculatePayout(trackInfo));
 printSong(trackInfo);
+var user = {
+    id: 12345,
+    username: "ggfam"
+};
+var happyFace = {
+    radius: 4,
+    color: "yellow"
+};
+var abomination = {
+    numLives: 9,
+    breed: "who knows, run away!",
+    age: 5
+};

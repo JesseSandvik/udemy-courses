@@ -1,14 +1,15 @@
 import React, { Component } from "react";
+import "./Pokecard.css";
 
 const POKE_API =
   "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon";
 
-class PokeCard extends Component {
+class Pokecard extends Component {
   render() {
     const { id, name, type, experience } = this.props;
     let imgSrc = `${POKE_API}/${id}.png`;
     return (
-      <div className="PokeCard">
+      <div className="Pokecard">
         <h1>{name}</h1>
         <img alt={name} src={imgSrc} />
         <div>Type: {type}</div>
@@ -18,4 +19,4 @@ class PokeCard extends Component {
   }
 }
 
-export default PokeCard;
+export default Pokecard;

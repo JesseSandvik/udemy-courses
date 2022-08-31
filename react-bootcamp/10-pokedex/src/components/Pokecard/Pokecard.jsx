@@ -14,12 +14,14 @@ function convertNumberToThreeIndexedString(number) {
 
 class Pokecard extends Component {
   render() {
-    const { id, name, type, experience } = this.props;
+    const { id, name, type, experience, isWinner } = this.props;
     let imgSrc = `${POKE_API}/${convertNumberToThreeIndexedString(id)}.png`;
     return (
-      <div className="Pokecard">
+      <div className={isWinner ? "Pokecard Winner" : "Pokecard Loser"}>
         <h1 className="Pokecard-title">{name}</h1>
+        <div className="Pokecard-image">
         <img alt={name} src={imgSrc} />
+        </div>
         <div className="Pokecard-data">Type: {type}</div>
         <div className="Pokecard-data">EXP: {experience}</div>
       </div>

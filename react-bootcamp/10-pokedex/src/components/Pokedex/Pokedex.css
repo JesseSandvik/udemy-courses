@@ -1,15 +1,15 @@
 .Pokedex {
     display: grid;
-    grid-template-rows: auto 1fr;
+    gap: 8px;
+    grid-template-rows: auto auto 1fr;
 }
 
-.Pokedex-title {
-    padding: 24px;
+.Pokedex-experience {
+    margin: 0 8px;
 }
 
 .Pokedex-cards {
     display: grid;
     gap: 24px;
-    grid-template-columns: repeat(auto-fit, minmax(224px, 1fr));
-    margin: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 }

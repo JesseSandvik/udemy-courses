@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import Pokecard from '../Pokecard/Pokecard';
+
 import "./Pokedex.css";
 
 class Pokedex extends Component {
@@ -16,12 +17,13 @@ class Pokedex extends Component {
         ]
     };
   render() {
-    const { pokemon } = this.props;
+    const { pokemon, experience, isWinner } = this.props;
     return (
       <div className='Pokedex'>
-        <h1 className="Pokedex-title">Pokedex</h1>
+        <h1 className='Pokedex-result'>{isWinner ? "Winning Hand!" : "Losing Hand..."}</h1>
+        <p className='Pokedex-experience'>total experience: {experience}</p>
         <div className='Pokedex-cards'>
-        {pokemon.map(({ id, name, type, base_experience }) => <Pokecard key={id} id={id} name={name} type={type} experience={base_experience} />)}
+        {pokemon.map(({ id, name, type, base_experience }) => <Pokecard key={id} id={id} name={name} type={type} experience={base_experience} isWinner={isWinner} />)}
         </div>
       </div>
     )

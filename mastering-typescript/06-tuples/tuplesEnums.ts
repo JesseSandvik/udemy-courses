@@ -45,3 +45,13 @@ function isDelivered(status: OrderStatus) {
 
 
 isDelivered(OrderStatus.RETURNED);
+
+enum ArrowKeys {
+    UP = "up",
+    DOWN = "down",
+    LEFT = "left",
+    RIGHT = "right",
+    ERROR = 311,
+};
+
+ArrowKeys.LEFT;

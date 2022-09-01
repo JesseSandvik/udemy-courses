@@ -16,3 +16,32 @@ success.push(44);
 success.pop();
 
 const responses: HTTPResponse[] = [success, forbidden];
+
+enum Responses {
+    no,
+    yes,
+    maybe
+};
+
+enum Directions {
+    UP,
+    DOWN,
+    LEFT,
+    RIGHT,
+}
+
+enum OrderStatus {
+    PENDING,
+    SHIPPED,
+    DELIVERED,
+    RETURNED,
+}
+
+const myStatus = OrderStatus.DELIVERED;
+
+function isDelivered(status: OrderStatus) {
+    return status === OrderStatus.DELIVERED;
+}
+
+
+isDelivered(OrderStatus.RETURNED);

@@ -55,3 +55,9 @@ enum ArrowKeys {
 };
 
 ArrowKeys.LEFT;
+
+const enum SomethingRandon {
+    new,
+    old,
+    something,
+};

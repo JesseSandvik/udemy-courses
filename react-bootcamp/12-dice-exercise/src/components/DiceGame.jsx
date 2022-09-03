@@ -14,16 +14,20 @@ export default class DiceGame extends Component {
     this.rollDice = this.rollDice.bind(this);
   }
   rollDice() {
-    this.setState({ isRolling: true });
-    const firstDieRoll = Math.floor(Math.random() * 6) + 1;
-    const secondDieRoll = Math.floor(Math.random() * 6) + 1;
+      const firstDieRoll = Math.floor(Math.random() * 6) + 1;
+      const secondDieRoll = Math.floor(Math.random() * 6) + 1;
 
-    this.setState({
-      firstDie: firstDieRoll,
-      secondDie: secondDieRoll,
-    });
+      this.setState({
+        isRolling: true,
+      });
 
-    this.setState({ isRolling: false });
+      setTimeout(() => {
+        this.setState({
+          firstDie: firstDieRoll,
+          secondDie: secondDieRoll,
+          isRolling: false
+        });
+      }, 1000);
   }
   render() {
     return (
@@ -32,7 +36,9 @@ export default class DiceGame extends Component {
           <Die die={this.state.firstDie} />
           <Die die={this.state.secondDie} />
         </div>
-        <Button disabled={this.state.isRolling} onClick={this.rollDice}>{this.state.isRolling ? "rolling..." : "roll dice!"}</Button>
+        <Button disabled={this.state.isRolling} onClick={this.rollDice}>
+          {this.state.isRolling ? "rolling..." : "roll dice!"}
+        </Button>
       </div>
     )
   }

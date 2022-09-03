@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 
 export default class Button extends Component {
   render() {
-    return <button>roll dice!</button>
+    const { children, isRolling, onClick } = this.props;
+    return <button disabled={isRolling} onClick={onClick}>{children}</button>
   }
 }

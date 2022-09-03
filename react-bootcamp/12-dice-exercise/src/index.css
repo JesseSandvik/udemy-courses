@@ -1,0 +1,22 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+#App {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+.DiceGame-dice {
+    display: flex;
+    gap: 24px;
+}
+
+.Die {
+    color: rebeccapurple;
+    font-size: 10rem;
+}

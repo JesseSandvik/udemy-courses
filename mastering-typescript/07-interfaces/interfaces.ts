@@ -70,3 +70,25 @@ const Waldo: ServiceDog = {
     },
     job: "drug sniffer",
 };
+
+interface Human {
+    name: string;
+}
+
+interface Employee {
+    readonly id: number;
+    email: string;
+}
+
+interface Engineer extends Human, Employee {
+    level: "junior" | "senior";
+    preferredLanguage: string;
+}
+
+const pierre: Engineer = {
+    id: 123,
+    name: "Pierre",
+    email: "pierre@france.org",
+    level: "senior",
+    preferredLanguage: "C#",
+}

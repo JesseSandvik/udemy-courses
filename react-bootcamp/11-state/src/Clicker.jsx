@@ -9,7 +9,7 @@ export default class Clicker extends Component {
         this.getRandomNumber = this.getRandomNumber.bind(this);
     }
     getRandomNumber() {
-        const randomNumber = Math.floor(Math.random() * 10);
+        const randomNumber = Math.floor(Math.random() * 10) + 1;
         this.setState({ number: randomNumber });
     }
   render() {

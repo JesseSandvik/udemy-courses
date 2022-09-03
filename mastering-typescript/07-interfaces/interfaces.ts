@@ -92,3 +92,15 @@ const pierre: Engineer = {
     level: "senior",
     preferredLanguage: "C#",
 }
+
+type color = "red" | "blue";
+// interface color {"red" | "blue";}
+
+type Chicken = {
+    breed: string;
+};
+
+// cannot do this with a type
+// type Chicken = {
+//     numberOfEggs: number;
+// };

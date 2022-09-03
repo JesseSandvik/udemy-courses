@@ -20,3 +20,19 @@
     color: rebeccapurple;
     font-size: 10rem;
 }
+
+button {
+    background-color: rebeccapurple;
+    border-radius: 16px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 2rem;
+    height: 80px;
+    text-transform: capitalize;
+    transition: 0.3s ease-in-out;
+    width: 100%;
+}
+
+button:hover {
+    box-shadow: 0 5px 8px -5px rgba(0, 0, 0, 0.55);
+}

@@ -56,3 +56,17 @@ const Ghost: Dog = {
         return "Boof!";
     }
 };
+
+interface ServiceDog extends Dog {
+    job: "drug sniffer" | "bomb" | "guide dog";
+};
+
+const Waldo: ServiceDog = {
+    name: "Waldo",
+    age: 2,
+    breed: "Certified Badass",
+    bark() {
+        return "Ruff Ruff";
+    },
+    job: "drug sniffer",
+};

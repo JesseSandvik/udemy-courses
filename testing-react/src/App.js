@@ -10,18 +10,18 @@ function App() {
     backgroundColor: "gray",
   };
   const [colorButtonStyling, setColorButtonStyling] = useState({
-    backgroundColor: "red",
+    backgroundColor: "MediumVioletRed",
   });
   const [isDisabled, setIsDisabled] = useState(false);
 
   const handleColorButtonOnClick = () => {
-    if (colorButtonStyling.backgroundColor === "red") {
+    if (colorButtonStyling.backgroundColor === "MediumVioletRed") {
       setColorButtonStyling({
-        backgroundColor: "blue",
+        backgroundColor: "MidnightBlue",
       });
     } else {
       setColorButtonStyling({
-        backgroundColor: "red",
+        backgroundColor: "MediumVioletRed",
       });
     }
   };
@@ -33,9 +33,9 @@ function App() {
         style={isDisabled ? disabledButtonStyling : colorButtonStyling}
         onClick={handleColorButtonOnClick}
       >
-        {colorButtonStyling.backgroundColor === "red"
-          ? "Change To Blue"
-          : "Change To Red"}
+        {colorButtonStyling.backgroundColor === "MediumVioletRed"
+          ? "Change To Midnight Blue"
+          : "Change To Medium Violet Red"}
       </button>
       <input
         id="disable-button-checkbox"

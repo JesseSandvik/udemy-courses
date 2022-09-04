@@ -38,7 +38,16 @@ test("Checkbox disables button on first click and enables on second click", () =
 
   fireEvent.click(disableColorButtonCheckbox);
   expect(colorButton).toBeDisabled();
+  expect(colorButton).toHaveStyle({ backgroundColor: "gray" });
 
   fireEvent.click(disableColorButtonCheckbox);
   expect(colorButton).toBeEnabled();
+  expect(colorButton).toHaveStyle({ backgroundColor: "red" });
+
+  fireEvent.click(colorButton);
+  fireEvent.click(disableColorButtonCheckbox);
+  expect(colorButton).toHaveStyle({ backgroundColor: "gray" });
+
+  fireEvent.click(disableColorButtonCheckbox);
+  expect(colorButton).toHaveStyle({ backgroundColor: "blue" });
 });

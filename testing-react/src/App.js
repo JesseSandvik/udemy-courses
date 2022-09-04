@@ -2,12 +2,15 @@ import { useState } from "react";
 import "./App.css";
 
 function App() {
+  const disabledButtonStyling = {
+    backgroundColor: "gray",
+  };
   const [colorButtonStyling, setColorButtonStyling] = useState({
     backgroundColor: "red",
   });
   const [isDisabled, setIsDisabled] = useState(false);
 
-  const handleColorButtonChange = () => {
+  const handleColorButtonOnClick = () => {
     if (colorButtonStyling.backgroundColor === "red") {
       setColorButtonStyling({
         backgroundColor: "blue",
@@ -23,8 +26,8 @@ function App() {
     <div className="App">
       <button
         disabled={isDisabled}
-        style={colorButtonStyling}
-        onClick={handleColorButtonChange}
+        style={isDisabled ? disabledButtonStyling : colorButtonStyling}
+        onClick={handleColorButtonOnClick}
       >
         {colorButtonStyling.backgroundColor === "red"
           ? "Change To Blue"

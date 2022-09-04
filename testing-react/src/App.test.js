@@ -13,3 +13,16 @@ test("button has correct initial color", () => {
 });
 // the above test does this already, not necessary
 // test("button has correct initial text", () => {});
+test("initial conditions", () => {
+  render(<App />);
+  // check that button starts out enabled
+  const colorButton = screen.getByRole("button", {
+    name: /change to blue/i,
+  });
+
+  expect(colorButton).toBeEnabled();
+
+  // check that checkbox starts out unchecked
+  const checkbox = screen.getByRole("checkbox");
+  expect(checkbox).not.toBeChecked();
+});

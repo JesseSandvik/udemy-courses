@@ -25,6 +25,7 @@ function App() {
           ? "Change To Blue"
           : "Change To Red"}
       </button>
+      <input type="checkbox" />
     </div>
   );
 }

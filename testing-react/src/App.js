@@ -5,7 +5,7 @@ function App() {
   const [colorButtonStyling, setColorButtonStyling] = useState({
     backgroundColor: "red",
   });
-  const [isChecked, setIsChecked] = useState(false);
+  const [isDisabled, setIsDisabled] = useState(false);
 
   const handleColorButtonChange = () => {
     if (colorButtonStyling.backgroundColor === "red") {
@@ -22,7 +22,7 @@ function App() {
   return (
     <div className="App">
       <button
-        disabled={isChecked}
+        disabled={isDisabled}
         style={colorButtonStyling}
         onClick={handleColorButtonChange}
       >
@@ -31,10 +31,13 @@ function App() {
           : "Change To Red"}
       </button>
       <input
+        id="disable-button-checkbox"
         type="checkbox"
-        value={isChecked}
-        onChange={() => setIsChecked(!isChecked)}
+        aria-checked={isDisabled}
+        defaultChecked={isDisabled}
+        onChange={(event) => setIsDisabled(event.target.checked)}
       />
+      <label htmlFor="disable-button-checkbox">Disable Button</label>
     </div>
   );
 }

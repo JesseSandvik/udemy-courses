@@ -9,7 +9,7 @@ function Options({ optionType }) {
         async function fetchOptions() {
             try {
                 const response = await axios.get(`http://localhost:3030/${optionType}`);
-                setItems(response);
+                setItems(response.data);
             } catch (error) {
                 console.error(error);
                 throw error;

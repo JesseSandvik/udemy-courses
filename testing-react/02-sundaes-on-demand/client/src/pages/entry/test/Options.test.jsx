@@ -15,3 +15,14 @@ test("displays image for each scoop from the server", async () => {
     // arrays and objects have to use the 'toEqual' matcher
     expect(altText).toEqual(["Chocolate scoop", "Vanilla scoop"]);
 });
+test("displays image for each topping from the server", async () => {
+    render(<Options optionType="toppings" />);
+
+    const toppingImages = await screen.findAllByRole("img", { name: /topping$/i });
+
+    expect(toppingImages).toHaveLength(3);
+
+    const altText = toppingImages.map(topping => topping.alt);
+
+    expect(altText).toEqual(["Hot fudge topping", "Peanut butter cups topping", "Gummi bears topping"]);
+});

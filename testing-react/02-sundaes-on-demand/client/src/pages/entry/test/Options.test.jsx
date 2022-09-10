@@ -1,8 +1,9 @@
 import { render, screen } from "@testing-library/react";
 import Options from "../Options";
+import { OrderDetailsProvider } from "../../../contexts/OrderDetails";
 
 test("displays image for each scoop from the server", async () => {
-    render(<Options optionType="scoops" />);
+    render(<Options optionType="scoops" />, { wrapper: OrderDetailsProvider });
 
     // find the images
     // regex $ here checks if this string occurs at the end of the string

@@ -24,6 +24,9 @@ console.log("hello".replaceAll("l", "!"));
 // we can insist that this exists
 const input = document.getElementById("todo-input")! as HTMLInputElement;
 
+// this doesn't work with React/JSX, less commonly used anyway but same result
+// (<HTMLInputElement>input).value;
+
 btn?.addEventListener("click", function() {
     alert(input.value);
     input.value = "";

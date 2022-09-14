@@ -8,11 +8,17 @@ printDouble("HELLO");
 const btn = document.getElementById("btn");
 console.log(btn);
 console.log("hello".replaceAll("l", "!"));
-btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
-    alert("Clicked!");
-});
+// btn?.addEventListener("click", function() {
+//     alert("Clicked!");
+// });
 // non-null assertion operator, only use this in situations where you know for 100% this will not be null
-const otherBtn = document.getElementById("btn");
-otherBtn.addEventListener("click", function () {
-    alert("Also clicked!");
+// const otherBtn = document.getElementById("btn")!;
+// otherBtn.addEventListener("click", function() {
+//     alert("Also clicked!");
+// });
+// we can insist that this exists
+const input = document.getElementById("todo-input");
+btn === null || btn === void 0 ? void 0 : btn.addEventListener("click", function () {
+    alert(input.value);
+    input.value = "";
 });

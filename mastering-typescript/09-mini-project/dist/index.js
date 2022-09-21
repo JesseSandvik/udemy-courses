@@ -27,7 +27,8 @@
 const btn = document.getElementById("btn");
 const input = document.getElementById("todo-input");
 const form = document.querySelector("form");
-form.addEventListener("submit", (event) => {
+function handleSubmit(event) {
     event.preventDefault();
-    console.log("submitted");
-});
+    console.log("Submitted!");
+}
+form.addEventListener("submit", handleSubmit);

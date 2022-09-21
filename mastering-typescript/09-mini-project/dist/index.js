@@ -28,7 +28,16 @@ const btn = document.getElementById("btn");
 const input = document.getElementById("todo-input");
 const form = document.querySelector("form");
 const todoList = document.getElementById("todo-list");
-const todos = [];
+const todos = getTodosFromLocalStorage();
+if (todos.length > 0) {
+    todos.forEach(createTodo);
+}
+function getTodosFromLocalStorage() {
+    const todosJSON = localStorage.getItem("todos");
+    if (todosJSON === null)
+        return [];
+    return JSON.parse(todosJSON);
+}
 function handleSubmit(event) {
     event.preventDefault();
     const newTodo = {
@@ -37,6 +46,7 @@ function handleSubmit(event) {
     };
     createTodo(newTodo);
     todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 function createTodo(todo) {
     const newLI = document.createElement("LI");

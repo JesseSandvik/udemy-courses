@@ -42,7 +42,17 @@ interface Todo {
     completed: boolean;
 }
 
-const todos: Todo[] = [];
+const todos: Todo[] = getTodosFromLocalStorage();
+
+if (todos.length > 0) {
+    todos.forEach(createTodo);
+}
+
+function getTodosFromLocalStorage(): Todo[] {
+    const todosJSON = localStorage.getItem("todos");
+    if (todosJSON === null) return [];
+    return JSON.parse(todosJSON);
+}
 
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
@@ -52,6 +62,7 @@ function handleSubmit(event: SubmitEvent) {
     };
     createTodo(newTodo);
     todos.push(newTodo);
+    localStorage.setItem("todos", JSON.stringify(todos));
 }
 
 function createTodo(todo: Todo) {

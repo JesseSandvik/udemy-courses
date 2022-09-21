@@ -37,14 +37,29 @@ const input = document.getElementById("todo-input")! as HTMLInputElement;
 const form = document.querySelector("form")!;
 const todoList = document.getElementById("todo-list")! as HTMLUListElement;
 
+interface Todo {
+    text: string;
+    completed: boolean;
+}
+
+const todos: Todo[] = [];
+
 function handleSubmit(event: SubmitEvent) {
     event.preventDefault();
-    const newTodo = input.value;
+    const newTodo: Todo = {
+        text: input.value,
+        completed: false,
+    };
+    createTodo(newTodo);
+    todos.push(newTodo);
+}
+
+function createTodo(todo: Todo) {
     const newLI = document.createElement("LI");
     const checkbox = document.createElement("input");
     checkbox.type = "checkbox";
     newLI.append(checkbox);
-    newLI.append(newTodo);
+    newLI.append(todo.text);
     todoList?.append(newLI);
 }
 

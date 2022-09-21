@@ -27,8 +27,15 @@
 const btn = document.getElementById("btn");
 const input = document.getElementById("todo-input");
 const form = document.querySelector("form");
+const todoList = document.getElementById("todo-list");
 function handleSubmit(event) {
     event.preventDefault();
-    console.log("Submitted!");
+    const newTodo = input.value;
+    const newLI = document.createElement("LI");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    newLI.append(checkbox);
+    newLI.append(newTodo);
+    todoList === null || todoList === void 0 ? void 0 : todoList.append(newLI);
 }
 form.addEventListener("submit", handleSubmit);
